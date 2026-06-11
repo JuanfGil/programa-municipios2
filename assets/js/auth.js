@@ -31,9 +31,13 @@
   }
 
   function authLogout() {
-    localStorage.removeItem(LS_SESION);
-    window.location.href = "index.html";
-  }
+  localStorage.removeItem("municipios_sesion");
+  localStorage.removeItem("pasto_sesion");
+
+  sessionStorage.clear();
+
+  window.location.replace("index.html");
+}
 
   function authLogin(username, password) {
     const u = AUTH_USERS.find(x => x.username === username && x.password === password);
