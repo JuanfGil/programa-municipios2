@@ -95,8 +95,12 @@ function guardarSesion(username, municipio, rol = "dinamizador") {
 }
 
 function cerrarSesion() {
-  localStorage.removeItem(LS_SESION_KEY);
-  window.location.href = "index.html";
+  localStorage.removeItem("municipios_sesion");
+  localStorage.removeItem("pasto_sesion");
+
+  sessionStorage.clear();
+
+  window.location.replace("index.html");
 }
 
 // ================================
